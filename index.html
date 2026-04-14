@@ -57,6 +57,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+      overflow-x: hidden; /* Prevent horizontal scroll */
     }
 
     img {
@@ -1031,6 +1032,26 @@
 
     /* MOBILE NAV */
     @media (max-width: 1080px) {
+      .navbar-inner {
+        gap: 8px;
+        min-height: 70px;
+      }
+      .logo {
+        gap: 8px;
+      }
+      .logo-title {
+        font-size: 1.45rem;
+      }
+      .logo-sub {
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+      }
+      .lang-switcher {
+        margin-right: 8px !important;
+        padding-right: 8px !important;
+        font-size: 0.75rem !important;
+      }
+
       .nav-links,
       .nav-cta .nav-phone,
       .nav-cta .btn-soft {
@@ -1043,12 +1064,12 @@
 
       .mobile-panel {
         position: fixed;
-        inset: 78px 16px auto 16px;
+        inset: 72px 12px auto 12px;
         background: rgba(26, 28, 23, 0.98);
         border: 1px solid rgba(255,255,255,0.12);
-        border-radius: 24px;
-        padding: 18px;
-        display: none; /* Correctly hidden here, but we need a global default */
+        border-radius: 20px;
+        padding: 14px;
+        display: none;
         box-shadow: 0 18px 40px rgba(0,0,0,0.35);
         z-index: 1001;
       }
