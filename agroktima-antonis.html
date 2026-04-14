@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="el" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ο Κήπος του Αντώνη | Φρέσκα προϊόντα από τη Μόρια Λέσβου</title>
+    <meta
+      name="description"
+      content="Φρέσκα ζαρζαβατικά, λαχανικά, φρούτα εποχής και λάδι από τη Μόρια Λέσβου. Απευθείας από τον παραγωγό, με έμφαση στη φρεσκάδα και την εποχικότητα."
+    />
+    <meta property="og:title" content="Ο Κήπος του Αντώνη" />
+    <meta
+      property="og:description"
+      content="Φρέσκα προϊόντα από τη Μόρια Λέσβου, κατευθείαν από τον παραγωγό."
+    />
+    <meta property="og:type" content="website" />
+
+    <script>
+      tailwind = window.tailwind || {};
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#f7f3e9",
+              "surface-container": "#fffdf7",
+              primary: "#6b7042",
+              "on-primary": "#ffffff",
+              secondary: "#c28e5a",
+              "on-secondary": "#ffffff",
+              tertiary: "#4a5a54",
+              surface: "#fdfbf7",
+              "on-surface": "#2d2d2a",
+              "on-surface-variant": "#5c5c56",
+              background: "#fdfbf7",
+              "accent-warm": "#f4e4bc",
+            },
+            borderRadius: {
+              DEFAULT: "0.375rem",
+              lg: "1rem",
+              xl: "2rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Cormorant Garamond", "serif"],
+              body: ["Outfit", "sans-serif"],
+              label: ["Outfit", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 12px 40px rgba(0,0,0,0.08)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+        background-color: #fdfbf7;
+        color: #2d2d2a;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 700;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      }
+
+      .hero-overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.18) 0%,
+          rgba(0, 0, 0, 0.32) 100%
+        );
+      }
+
+      .section-fade {
+        background: linear-gradient(
+          to bottom,
+          rgba(253, 251, 247, 0) 0%,
+          rgba(253, 251, 247, 1) 100%
+        );
+      }
+    </style>
+  </head>
+
+  <body class="bg-surface text-on-surface selection:bg-secondary/20">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 z-50 border-b border-accent-warm/30 bg-white/90 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-5 md:px-8">
+        <div class="flex items-center justify-between py-4">
+          <a href="#home" class="flex flex-col leading-tight">
+            <span class="font-headline text-2xl md:text-3xl font-bold text-primary">
+              Ο Κήπος του Αντώνη
+            </span>
+            <span class="text-[10px] md:text-xs uppercase tracking-[0.25em] text-secondary font-body">
+              Μόρια Λέσβου
+            </span>
+          </a>
+
+          <nav class="hidden lg:flex items-center gap-8">
+            <a class="text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#home">Αρχική</a>
+            <a class="text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#availability">Τι έχουμε τώρα</a>
+            <a class="text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#products">Προϊόντα</a>
+            <a class="text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#farm">Το αγρόκτημα</a>
+            <a class="text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#orders">Παραγγελίες</a>
+            <a class="text-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#contact">Επικοινωνία</a>
+          </nav>
+
+          <div class="hidden lg:flex items-center gap-3">
+            <a
+              href="#contact"
+              class="rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-widest text-on-primary hover:bg-tertiary transition-colors shadow-md"
+            >
+              WhatsApp
+            </a>
+          </div>
+
+          <button
+            id="menu-toggle"
+            type="button"
+            aria-label="Άνοιγμα μενού"
+            class="lg:hidden inline-flex items-center justify-center rounded-full border border-accent-warm/50 p-2 text-primary"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden pb-4">
+          <div class="flex flex-col gap-3 border-t border-accent-warm/30 pt-4">
+            <a class="text-sm uppercase tracking-widest text-on-surface-variant" href="#home">Αρχική</a>
+            <a class="text-sm uppercase tracking-widest text-on-surface-variant" href="#availability">Τι έχουμε τώρα</a>
+            <a class="text-sm uppercase tracking-widest text-on-surface-variant" href="#products">Προϊόντα</a>
+            <a class="text-sm uppercase tracking-widest text-on-surface-variant" href="#farm">Το αγρόκτημα</a>
+            <a class="text-sm uppercase tracking-widest text-on-surface-variant" href="#orders">Παραγγελίες</a>
+            <a class="text-sm uppercase tracking-widest text-on-surface-variant" href="#contact">Επικοινωνία</a>
+            <a
+              href="#contact"
+              class="mt-2 inline-flex w-fit rounded-full bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-24">
+      <!-- Hero -->
+      <section id="home" class="relative min-h-[88vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbRzMBTbJCUJYDbNfFcK2PGNRtIR3uU3u717_FosFHY0to95gybvcto1bOasl42yi2-3DvPp24Nn3NbVzcxX0FK9sFKC1vFVYH_LuEAW_7OdHzga95nc_RftMn5pASPTJQx1hMfxO_QegcbKoi60A1mA11ovoL9YGohlDcoyKgXcpPmHrMPZQOqrR80VjuD6h-C0yArcFh6ULTVr_3STBcxQEnYGe51FnT0qrF-FHW3JaZeJHOnHU2J6KFoS97KdyiapGm42CiMzBs"
+            alt="Ελαιώνας και αγροτική γη στη Λέσβο"
+            class="h-full w-full object-cover"
+          />
+          <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <div class="relative z-10 w-full">
+          <div class="max-w-7xl mx-auto px-6 md:px-8">
+            <div class="max-w-3xl text-white">
+              <span class="mb-6 inline-block rounded-full border border-white/50 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.3em] backdrop-blur-sm">
+                Μόρια • Λέσβος • Παραγωγός φρέσκων προϊόντων
+              </span>
+
+              <h1 class="font-headline text-5xl sm:text-6xl md:text-7xl leading-[0.95] drop-shadow-sm">
+                Φρέσκα από τη Μόρια Λέσβου,<br />
+                κατευθείαν από τον παραγωγό
+              </h1>
+
+              <p class="mt-6 max-w-2xl text-lg md:text-xl leading-relaxed text-white/90">
+                Στο αγρόκτημα του Αντώνη καλλιεργούμε ζαρζαβατικά, λαχανικά,
+                φρούτα εποχής και παράγουμε λάδι με έμφαση στη φρεσκάδα,
+                την εποχικότητα και την προσωπική φροντίδα.
+              </p>
+
+              <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#availability"
+                  class="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-lg shadow-primary/20 hover:bg-tertiary transition-colors"
+                >
+                  Δες τι έχουμε τώρα
+                </a>
+                <a
+                  href="#contact"
+                  class="inline-flex items-center justify-center rounded-full border border-white/60 bg-white/10 px-8 py-4 text-sm font-bold uppercase tracking-widest text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
+                >
+                  Επικοινωνία
+                </a>
+              </div>
+
+              <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
+                <div class="rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
+                  <p class="text-xs uppercase tracking-[0.2em] text-white/70">Καθημερινή λογική</p>
+                  <p class="mt-2 text-base font-medium">Φρέσκα εποχικά προϊόντα</p>
+                </div>
+                <div class="rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
+                  <p class="text-xs uppercase tracking-[0.2em] text-white/70">Άμεση σχέση</p>
+                  <p class="mt-2 text-base font-medium">Απευθείας από τον Αντώνη</p>
+                </div>
+                <div class="rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
+                  <p class="text-xs uppercase tracking-[0.2em] text-white/70">Για όλους</p>
+                  <p class="mt-2 text-base font-medium">Σπίτια και επαγγελματίες</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Availability -->
+      <section id="availability" class="bg-accent-warm/20 py-20">
+        <div class="max-w-7xl mx-auto px-6 md:px-8">
+          <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <div class="max-w-2xl">
+              <span class="block text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-3">
+                Διαθεσιμότητα
+              </span>
+              <h2 class="text-4xl md:text-5xl text-primary leading-tight">
+                Τι έχουμε αυτή την περίοδο
+              </h2>
+              <p class="mt-4 text-lg text-on-surface-variant leading-relaxed">
+                Η παραγωγή μας ακολουθεί την εποχή και τη συγκομιδή.
+                Παρακάτω βλέπεις ένα ενδεικτικό παράδειγμα. Το περιεχόμενο αυτό
+                μπορεί να ενημερώνεται εύκολα κάθε εβδομάδα.
+              </p>
+            </div>
+
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-tertiary transition-colors"
+            >
+              Ρώτησέ μας τι είναι διαθέσιμο σήμερα
+            </a>
+          </div>
+
+          <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5">
+            <div class="rounded-2xl bg-white p-6 shadow-soft">
+              <p class="text-xs uppercase tracking-[0.2em] text-secondary">Λαχανικά</p>
+              <p class="mt-3 text-lg font-semibold text-primary">Ντομάτες</p>
+              <p class="mt-1 text-on-surface-variant">Φρέσκες και εποχικές</p>
+            </div>
+            <div class="rounded-2xl bg-white p-6 shadow-soft">
+              <p class="text-xs uppercase tracking-[0.2em] text-secondary">Ζαρζαβατικά</p>
+              <p class="mt-3 text-lg font-semibold text-primary">Αγγούρια</p>
+              <p class="mt-1 text-on-surface-variant">Καθημερινής διαθεσιμότητας</p>
+            </div>
+            <div class="rounded-2xl bg-white p-6 shadow-soft">
+              <p class="text-xs uppercase tracking-[0.2em] text-secondary">Εποχικά</p>
+              <p class="mt-3 text-lg font-semibold text-primary">Κολοκύθια & πιπεριές</p>
+              <p class="mt-1 text-on-surface-variant">Ανάλογα με τη συγκομιδή</p>
+            </div>
+            <div class="rounded-2xl bg-white p-6 shadow-soft">
+              <p class="text-xs uppercase tracking-[0.2em] text-secondary">Παραγωγή μας</p>
+              <p class="mt-3 text-lg font-semibold text-primary">Λάδι</p>
+              <p class="mt-1 text-on-surface-variant">Από τη γη της Μόριας</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products -->
+      <section id="products" class="py-24 bg-surface">
+        <div class="max-w-7xl mx-auto px-6 md:px-8">
+          <div class="max-w-3xl mb-14">
+            <span class="block text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-3">
+              Η παραγωγή μας
+            </span>
+            <h2 class="text-4xl md:text-5xl text-primary">
+              Τι παράγουμε
+            </h2>
+            <p class="mt-4 text-lg text-on-surface-variant leading-relaxed">
+              Καλλιεργούμε με συνέπεια και προσωπική φροντίδα, με σεβασμό στον ρυθμό της εποχής
+              και στη φυσική εξέλιξη της παραγωγής.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <article class="rounded-2xl bg-white p-8 shadow-soft border border-accent-warm/20">
+              <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent-warm/35 text-primary">
+                <span class="material-symbols-outlined text-3xl">grass</span>
+              </div>
+              <h3 class="text-3xl text-primary">Ζαρζαβατικά</h3>
+              <p class="mt-4 text-on-surface-variant leading-relaxed">
+                Φρέσκα προϊόντα καθημερινής χρήσης, απευθείας από το χωράφι.
+              </p>
+            </article>
+
+            <article class="rounded-2xl bg-white p-8 shadow-soft border border-accent-warm/20">
+              <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent-warm/35 text-primary">
+                <span class="material-symbols-outlined text-3xl">spa</span>
+              </div>
+              <h3 class="text-3xl text-primary">Λαχανικά</h3>
+              <p class="mt-4 text-on-surface-variant leading-relaxed">
+                Παραγωγή που δίνει έμφαση στη γεύση, τη φρεσκάδα και τη σωστή εποχή.
+              </p>
+            </article>
+
+            <article class="rounded-2xl bg-white p-8 shadow-soft border border-accent-warm/20">
+              <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent-warm/35 text-primary">
+                <span class="material-symbols-outlined text-3xl">nutrition</span>
+              </div>
+              <h3 class="text-3xl text-primary">Φρούτα εποχής</h3>
+              <p class="mt-4 text-on-surface-variant leading-relaxed">
+                Ό,τι δίνει η γη μας φυσικά, στον σωστό χρόνο και με αληθινή γεύση.
+              </p>
+            </article>
+
+            <article class="rounded-2xl bg-white p-8 shadow-soft border border-accent-warm/20">
+              <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent-warm/35 text-primary">
+                <span class="material-symbols-outlined text-3xl">oil_barrel</span>
+              </div>
+              <h3 class="text-3xl text-primary">Λάδι</h3>
+              <p class="mt-4 text-on-surface-variant leading-relaxed">
+                Παραγωγή από τον τόπο μας, δεμένη με την παράδοση και την οικογενειακή δουλειά.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Us -->
+      <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="block text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-3">
+              Γιατί να μας επιλέξετε
+            </span>
+            <h2 class="text-4xl md:text-5xl text-primary">Η λογική μας είναι απλή</h2>
+            <p class="mt-4 text-lg text-on-surface-variant leading-relaxed">
+              Δίνουμε προτεραιότητα στη φρεσκάδα, στην εποχικότητα και στην άμεση σχέση
+              με τον άνθρωπο που θέλει να ξέρει από πού έρχεται αυτό που βάζει στο τραπέζι του.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="rounded-2xl p-8 bg-surface border border-accent-warm/20">
+              <h3 class="text-3xl text-primary">Σεβασμός στην εποχή</h3>
+              <p class="mt-4 text-on-surface-variant leading-relaxed">
+                Δεν προσπαθούμε να δείξουμε κάτι έξω από τη φυσική του στιγμή.
+                Η εποχή καθορίζει τι είναι πραγματικά καλό.
+              </p>
+            </div>
+
+            <div class="rounded-2xl p-8 bg-surface border border-accent-warm/20">
+              <h3 class="text-3xl text-primary">Προσωπική φροντίδα</h3>
+              <p class="mt-4 text-on-surface-variant leading-relaxed">
+                Η παραγωγή παρακολουθείται από εμάς τους ίδιους, με συνέπεια, παρουσία και ευθύνη.
+              </p>
+            </div>
+
+            <div class="rounded-2xl p-8 bg-surface border border-accent-warm/20">
+              <h3 class="text-3xl text-primary">Άμεση επικοινωνία</h3>
+              <p class="mt-4 text-on-surface-variant leading-relaxed">
+                Μιλάτε απευθείας μαζί μας για διαθεσιμότητα, ποσότητες και συνεργασίες.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Farm Story -->
+      <section id="farm" class="py-24 bg-surface">
+        <div class="max-w-7xl mx-auto px-6 md:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
+            <div class="lg:col-span-6 relative">
+              <div class="absolute -top-8 -left-8 h-36 w-36 rounded-full bg-accent-warm/35 blur-3xl"></div>
+              <div class="relative overflow-hidden rounded-[28px] shadow-soft border-[10px] border-white">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd8Mt9BEfLMRVlo6l7E0fk2sHrPhePxlvEdzUgK-Ff-CAwiLQAy6sRNk7m_t2Qdm1ugUS_lboRmZ2bnkW11j3CgPDY66sqgAbGWieHjE_JWPj718RW3pRzibsDDAOmF-FJ_MzMfRuxiCQx89xrFNsAzhFK5ifEkVSxUVSfB98CWPmBTvrpAd46XSiz5sPfmue1CYggiHxyefrI7--i5pBAWvYZlj3Vw1angFXoLfptsmCRtj1KPfcox_93YrYFP5bWrOpuFkYJI57-"
+                  alt="Χέρια παραγωγού με ελιές"
+                  class="w-full h-full object-cover aspect-[4/5]"
+                />
+              </div>
+            </div>
+
+            <div class="lg:col-span-6">
+              <span class="block text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-3">
+                Το αγρόκτημα
+              </span>
+              <h2 class="text-4xl md:text-5xl text-primary leading-tight">
+                Ο Αντώνης και η γη της Μόριας
+              </h2>
+
+              <div class="mt-8 space-y-6 text-lg leading-relaxed text-on-surface-variant">
+                <p>
+                  Ο Κήπος του Αντώνη είναι μια καθημερινή σχέση με τη γη,
+                  τη συγκομιδή και τον άνθρωπο που αναζητά φρέσκο προϊόν χωρίς περιττά λόγια.
+                </p>
+                <p>
+                  Η λογική μας είναι απλή: να προσφέρουμε ό,τι παράγουμε με συνέπεια,
+                  καθαρή επικοινωνία και σεβασμό στην εποχικότητα.
+                </p>
+                <p>
+                  Εδώ δεν θα βρείτε περιττή πολυτέλεια.
+                  Θα βρείτε τη γεύση της σωστής στιγμής και την αξία της άμεσης σχέσης με τον παραγωγό.
+                </p>
+              </div>
+
+              <div class="mt-8 rounded-2xl bg-white border border-accent-warm/20 p-6 shadow-soft">
+                <p class="font-headline text-2xl md:text-3xl italic text-primary leading-snug">
+                  «Στόχος μας είναι να φτάνει στο τραπέζι σας αυτό που δίνει η γη μας,
+                  την ώρα που πραγματικά αξίζει να το απολαύσετε.»
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Orders -->
+      <section id="orders" class="py-24 bg-primary text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-15 mix-blend-overlay">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF35FgTEKZkasFZHfPvZR13n8hHj3q-snEQ7VR5iaQXIhHRkOUoWsBEnA3a_b3IVX1wrXYVT54UMU-OsKTvwPNCvan9Z7_sgjXYA-l29sGxzOzI-ngerhJ0ZLOMASholgGmx3Z6QHSbD4AjD9h4JdlwlmVmNs69IuIMS6ZHLpN0wz0Xehk9I7VDxFwKU_WS_B3MlnfjBM9-4938zwBhDKDds9w-Yd-9CFSiEd0vNDxNCiljng0xyb_uPugLDxRiMp1Gac5MmHJkKJV"
+            alt="Υφή πέτρας"
+            class="h-full w-full object-cover"
+          />
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <span class="block text-accent-warm text-xs font-bold uppercase tracking-[0.2em] mb-3">
+                Παραγγελίες & συνεργασίες
+              </span>
+              <h2 class="text-4xl md:text-5xl leading-tight">
+                Για σπίτια και επαγγελματίες
+              </h2>
+              <p class="mt-5 text-lg text-white/85 leading-relaxed max-w-xl">
+                Επικοινωνήστε μαζί μας για να μάθετε τι είναι διαθέσιμο, για καθημερινές αγορές,
+                για μεγαλύτερες ποσότητες ή για πιθανή συνεργασία με επαγγελματικό χώρο.
+              </p>
+
+              <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#contact"
+                  class="inline-flex items-center justify-center rounded-full bg-accent-warm px-7 py-4 text-sm font-bold uppercase tracking-widest text-primary hover:brightness-105 transition-all"
+                >
+                  Παραγγελία / Επικοινωνία
+                </a>
+                <a
+                  href="#contact"
+                  class="inline-flex items-center justify-center rounded-full border border-white/30 px-7 py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-colors"
+                >
+                  Δες στοιχεία επικοινωνίας
+                </a>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm">
+                <p class="text-xs uppercase tracking-[0.2em] text-accent-warm">Για σπίτια</p>
+                <h3 class="mt-3 text-2xl font-headline">Καθημερινή φρεσκάδα</h3>
+                <p class="mt-3 text-white/80 leading-relaxed">
+                  Μικρές ή μεγαλύτερες αγορές, ανάλογα με τη διαθεσιμότητα της εβδομάδας.
+                </p>
+              </div>
+
+              <div class="rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm">
+                <p class="text-xs uppercase tracking-[0.2em] text-accent-warm">Για επαγγελματίες</p>
+                <h3 class="mt-3 text-2xl font-headline">Συνεννόηση για ποσότητες</h3>
+                <p class="mt-3 text-white/80 leading-relaxed">
+                  Εστίαση, μικρές επιχειρήσεις και επαγγελματικοί χώροι μπορούν να επικοινωνούν μαζί μας άμεσα.
+                </p>
+              </div>
+
+              <div class="rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm sm:col-span-2">
+                <p class="text-xs uppercase tracking-[0.2em] text-accent-warm">Πώς δουλεύουμε</p>
+                <h3 class="mt-3 text-2xl font-headline">Απλή διαδικασία</h3>
+                <ol class="mt-4 space-y-3 text-white/85 leading-relaxed list-decimal list-inside">
+                  <li>Μας ρωτάτε τι είναι διαθέσιμο.</li>
+                  <li>Συμφωνούμε ποσότητα και παραλαβή.</li>
+                  <li>Παίρνετε φρέσκο προϊόν απευθείας από εμάς.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section class="py-24 bg-surface">
+        <div class="max-w-7xl mx-auto px-6 md:px-8">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <div class="max-w-2xl">
+              <span class="block text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-3">
+                Εικόνες
+              </span>
+              <h2 class="text-4xl md:text-5xl text-primary">Ζωή στο αγρόκτημα</h2>
+              <p class="mt-4 text-lg text-on-surface-variant leading-relaxed">
+                Βάλε εδώ σταδιακά δικές σου φωτογραφίες από το χωράφι, τη συγκομιδή,
+                τον Αντώνη, τα καφάσια και την εποχική παραγωγή.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-5 auto-rows-[220px]">
+            <div class="col-span-2 row-span-2 overflow-hidden rounded-[28px] shadow-soft">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6kdU8qLsThE_D-WGzeQnnGxalW8PVT_eDzReOSep8Ad3m0WaT7QE20uR4pz4M0S_2_dqL1k9oy3_Ag-YPQpPkhNpa__8TM0tX1b3B133cONl8fjljO_x7BI0PgxhHWjraZpNabq0hTJ-GlfBj2-C86uSetCUgQH5Yy7MFa30cZV0Zr5rQoFm8dD9ycqUzKHm0bV-XyTkZWxijHnLdnkRce_mh_1RrqGGKoXPb8gZ24qvIXkcTOqV90dLGpYnYQ-uhvfaf7APsm1zB"
+                alt="Λαχανόκηπος"
+                class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+
+            <div class="overflow-hidden rounded-[28px] shadow-soft">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjGH3OgjitS8vj3ztVeGFiRaQTWeWNULqwc0s38MbkmAii4M2KFpinalAsIgstvnPsGAs-Z5GR2LvRZMeUfTOPC7QWfnyPXKGly-zcAIzZHmvOaQ1wgjUGrwl1QQgaP5Cxb_69SaeVh09isouGIeSKIPodj8y1MFwxA02qQO3PUijwU_VLxcUwkm-BWZBQOY-pcJ2MnFqRfu80Uv2RaD_ygwM1C0h4Em7bG-HGKZQQNkaQ6SYJp0EVGtXN9qyD-waaQS8a97sK8Hs-"
+                alt="Φρούτα συγκομιδής"
+                class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+
+            <div class="row-span-2 overflow-hidden rounded-[28px] shadow-soft">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOyoDRyMoGqsjjhm6KlYmzhVLfH5ZeC6KJfKz3XflWvp69vI-3qlQUsac8yQuXVcthtdLP2ZM_YY2uKNYxVtSeyzGwjbFjgOUmaHiNcb-If5Xudn_QOecz9kANApOF4kF9C-vqOVOL-gSqRcA-0558HgkaTqf--PvTEKzPQsqqpQw3mFHn6qn__Jz-Qip3-dWIgeyXStjnhEYXy-yyucML5vz-ru5OJbV1XE8IVmDjZqFK2fHASyhiyk1SAQeUJ4XPc7hOPQrXPXpz"
+                alt="Αεροφωτογραφία ελαιώνα"
+                class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+
+            <div class="overflow-hidden rounded-[28px] shadow-soft">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnuAg9QhbRS6B796B5rqruWJRNJGF0lUbHswRld3-kZBAThsPHvNxPN5GRvpuFRx1r766eOtvRWPZJVnVldL_z7XmSR8f5lNEKV8LVjviSY1aT0Ox9-Nc7Pv_FUqJlUtWEVpjVt_IJz9hpN-MrN_aeq_XEIyIwfQnTcUKAYnP5tj7kZFk_TGchJGVN0UbVwilJsttMPAkqI09b2DNbaEWDi1gRe3Xhlzyy5SACnCyVgxefqqcE7-OR9T_eMa5p0bvqQ6YIgJEyEDrU"
+                alt="Συγκομιδή ντομάτας"
+                class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-24 bg-accent-warm/20">
+        <div class="max-w-7xl mx-auto px-6 md:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+            <div class="rounded-[32px] bg-white p-8 md:p-10 shadow-soft border border-accent-warm/20">
+              <span class="block text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-3">
+                Επικοινωνία
+              </span>
+              <h2 class="text-4xl md:text-5xl text-primary leading-tight">
+                Μίλησε απευθείας μαζί μας
+              </h2>
+              <p class="mt-4 text-lg text-on-surface-variant leading-relaxed">
+                Για διαθεσιμότητα, παραγγελίες ή συνεργασίες, επικοινώνησε μαζί μας απλά και άμεσα.
+              </p>
+
+              <div class="mt-8 space-y-5 text-on-surface">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.2em] text-secondary">Τηλέφωνο</p>
+                  <p class="mt-1 text-lg font-medium">ΤΗΛΕΦΩΝΟ</p>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.2em] text-secondary">Email</p>
+                  <p class="mt-1 text-lg font-medium">EMAIL</p>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.2em] text-secondary">Περιοχή</p>
+                  <p class="mt-1 text-lg font-medium">Μόρια Λέσβου</p>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.2em] text-secondary">Σημείο</p>
+                  <p class="mt-1 text-lg font-medium">
+                    Στο φυσικό μας σημείο θα βρείτε και βασική καθημερινή εξυπηρέτηση mini market.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="tel:+30XXXXXXXXXX"
+                  class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-tertiary transition-colors"
+                >
+                  Κάλεσέ μας
+                </a>
+                <a
+                  href="https://wa.me/30XXXXXXXXXX"
+                  class="inline-flex items-center justify-center rounded-full border border-primary/20 bg-white px-7 py-4 text-sm font-bold uppercase tracking-widest text-primary hover:bg-primary hover:text-white transition-colors"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+
+            <div class="rounded-[32px] bg-primary text-white p-8 md:p-10 shadow-soft relative overflow-hidden">
+              <div class="absolute inset-0 opacity-15">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF35FgTEKZkasFZHfPvZR13n8hHj3q-snEQ7VR5iaQXIhHRkOUoWsBEnA3a_b3IVX1wrXYVT54UMU-OsKTvwPNCvan9Z7_sgjXYA-l29sGxzOzI-ngerhJ0ZLOMASholgGmx3Z6QHSbD4AjD9h4JdlwlmVmNs69IuIMS6ZHLpN0wz0Xehk9I7VDxFwKU_WS_B3MlnfjBM9-4938zwBhDKDds9w-Yd-9CFSiEd0vNDxNCiljng0xyb_uPugLDxRiMp1Gac5MmHJkKJV"
+                  alt="Υφή πέτρας"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <div class="relative z-10 h-full flex flex-col">
+                <span class="block text-accent-warm text-xs font-bold uppercase tracking-[0.2em] mb-3">
+                  Χάρτης & πρόσβαση
+                </span>
+                <h3 class="text-4xl md:text-5xl leading-tight">
+                  Έλα να μας βρεις
+                </h3>
+                <p class="mt-4 text-white/85 text-lg leading-relaxed">
+                  Πρόσθεσε εδώ το ακριβές σημείο σου στο Google Maps, ώστε ο κόσμος να μπορεί
+                  να φτάνει εύκολα στο αγρόκτημα ή στο σημείο εξυπηρέτησης.
+                </p>
+
+                <div class="mt-8 rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm">
+                  <p class="text-xs uppercase tracking-[0.2em] text-accent-warm">Πρόταση χρήσης</p>
+                  <p class="mt-3 text-lg leading-relaxed text-white/90">
+                    Βάλε εδώ:
+                    <br />
+                    • διεύθυνση ή περιγραφή σημείου
+                    <br />
+                    • ωράριο
+                    <br />
+                    • μέρες λειτουργίας
+                  </p>
+                </div>
+
+                <div class="mt-8">
+                  <a
+                    href="https://maps.google.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center rounded-full bg-accent-warm px-7 py-4 text-sm font-bold uppercase tracking-widest text-primary hover:brightness-105 transition-all"
+                  >
+                    Άνοιγμα στον χάρτη
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-accent-warm/30 bg-tertiary text-white">
+      <div class="max-w-7xl mx-auto px-6 md:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+          <div class="md:col-span-5">
+            <div class="flex flex-col leading-tight">
+              <span class="font-headline text-3xl font-bold">Ο Κήπος του Αντώνη</span>
+              <span class="mt-1 text-[10px] uppercase tracking-[0.35em] text-accent-warm">
+                Μόρια Λέσβου
+              </span>
+            </div>
+            <p class="mt-6 max-w-md text-white/70 leading-relaxed">
+              Φρέσκα προϊόντα από τη γη της Μόριας, με προσωπική φροντίδα,
+              εποχικότητα και άμεση σχέση με τον πελάτη.
+            </p>
+          </div>
+
+          <div class="md:col-span-2">
+            <h4 class="text-xs uppercase tracking-[0.2em] text-accent-warm font-bold">Μενού</h4>
+            <nav class="mt-5 flex flex-col gap-3 text-white/70">
+              <a href="#home" class="hover:text-white transition-colors">Αρχική</a>
+              <a href="#availability" class="hover:text-white transition-colors">Τι έχουμε τώρα</a>
+              <a href="#products" class="hover:text-white transition-colors">Προϊόντα</a>
+              <a href="#contact" class="hover:text-white transition-colors">Επικοινωνία</a>
+            </nav>
+          </div>
+
+          <div class="md:col-span-2">
+            <h4 class="text-xs uppercase tracking-[0.2em] text-accent-warm font-bold">Χρήσιμα</h4>
+            <nav class="mt-5 flex flex-col gap-3 text-white/70">
+              <a href="#orders" class="hover:text-white transition-colors">Παραγγελίες</a>
+              <a href="#farm" class="hover:text-white transition-colors">Το αγρόκτημα</a>
+              <a href="#contact" class="hover:text-white transition-colors">Χάρτης</a>
+            </nav>
+          </div>
+
+          <div class="md:col-span-3">
+            <h4 class="text-xs uppercase tracking-[0.2em] text-accent-warm font-bold">Στοιχεία</h4>
+            <div class="mt-5 space-y-3 text-white/70">
+              <p>ΤΗΛΕΦΩΝΟ</p>
+              <p>EMAIL</p>
+              <p>Μόρια Λέσβου</p>
+            </div>
+
+            <div class="mt-6 flex gap-4 text-sm">
+              <a href="#" class="hover:text-accent-warm transition-colors">Facebook</a>
+              <a href="#" class="hover:text-accent-warm transition-colors">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 border-t border-white/10 pt-6 flex flex-col md:flex-row gap-4 items-center justify-between text-[11px] uppercase tracking-widest text-white/40">
+          <p>© 2026 Ο Κήπος του Αντώνη</p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-white transition-colors">Προσωπικά δεδομένα</a>
+            <a href="#" class="hover:text-white transition-colors">Όροι χρήσης</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      document.querySelectorAll('#mobile-menu a').forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
