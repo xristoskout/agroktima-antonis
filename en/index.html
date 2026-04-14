@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antonis Garden | Fresh Produce Moria Lesvos</title>
+  <meta
+    name="description"
+    content="Fresh garden produce, vegetables, seasonal fruits, eggs and olive oil from Moria, Lesvos. Directly from the producer Antonis."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600&display=swap"
+  />
+
+  <style>
+    :root {
+      --bg: #f7f2e9;
+      --surface: #fffdf8;
+      --surface-2: #f2ebdf;
+      --surface-3: #ebe2d2;
+      --text: #1e1f1a;
+      --muted: #5f6358;
+      --line: rgba(35, 35, 28, 0.08);
+      --primary: #5f6f3f;
+      --primary-dark: #4d5b33;
+      --accent: #c78f55;
+      --accent-soft: #ead9c3;
+      --white: #ffffff;
+      --shadow: 0 20px 50px rgba(26, 24, 20, 0.09);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --container: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(calc(100% - 32px), var(--container)); margin-inline: auto; }
+    .section { padding: 100px 0; }
+    .section-tight { padding: 72px 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(255,255,255,0.28);
+      backdrop-filter: blur(8px);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow.dark {
+      background: rgba(95, 111, 63, 0.08);
+      border-color: rgba(95, 111, 63, 0.12);
+      color: var(--primary-dark);
+      backdrop-filter: none;
+    }
+
+    .section-head { max-width: 760px; margin-bottom: 34px; }
+    .section-head.center { text-align: center; margin-inline: auto; }
+    .section-head h2 {
+      margin: 16px 0 16px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.3rem, 4vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+    .section-head p { margin: 0; color: var(--muted); font-size: 1.06rem; max-width: 62ch; }
+
+    .btn, .btn-outline, .btn-soft {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.93rem;
+      letter-spacing: 0.03em;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn { background: var(--primary); color: var(--white); box-shadow: 0 14px 34px rgba(95, 111, 63, 0.22); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-outline { background: transparent; border-color: rgba(255,255,255,0.35); color: var(--white); backdrop-filter: blur(8px); }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn-soft { background: rgba(95, 111, 63, 0.08); color: var(--primary-dark); border-color: rgba(95, 111, 63, 0.12); }
+    .btn-soft:hover { background: rgba(95, 111, 63, 0.13); transform: translateY(-1px); }
+
+    /* NAV */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(26, 28, 23, 0.08);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+    }
+    .navbar-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .logo-title { font-family: "Cormorant Garamond", serif; font-size: 1.8rem; line-height: 1; color: #3f4c9c; font-weight: 700; letter-spacing: -0.01em; }
+    .logo-sub { color: #2d5a27; font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 800; }
+    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; padding: 0; margin: 0; }
+    .nav-links a { color: var(--text); font-size: 0.93rem; font-weight: 600; position: relative; }
+    .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -8px; width: 0; height: 2px; background: var(--accent); transition: width 0.25s ease; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta { display: flex; align-items: center; gap: 12px; }
+    .nav-phone { color: var(--text); font-size: 0.92rem; font-weight: 700; }
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px;
+      background: rgba(30, 31, 26, 0.05);
+      color: var(--text);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(15, 17, 13, 0.08) 0%, rgba(15, 17, 13, 0.28) 22%, rgba(15, 17, 13, 0.58) 100%),
+        url("../assets/images/hero.png") center center / cover no-repeat;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 214, 157, 0.15), transparent 34%),
+        radial-gradient(circle at 80% 25%, rgba(199, 143, 85, 0.15), transparent 30%);
+      z-index: -1;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.65fr; gap: 34px; align-items: end; padding: 64px 0 80px; }
+    .hero-copy { max-width: 760px; }
+    .hero h1 {
+      margin: 18px 0 18px;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--white);
+      font-size: clamp(3.2rem, 7vw, 7rem);
+      line-height: 0.9;
+      letter-spacing: -0.035em;
+      text-shadow: 0 8px 26px rgba(0,0,0,0.18);
+    }
+    .hero p { max-width: 56ch; margin: 0; color: rgba(255,255,255,0.9); font-size: clamp(1.03rem, 1.6vw, 1.2rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.95);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(10px);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .hero-card {
+      align-self: end;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(16px);
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      color: var(--white);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.16);
+    }
+    .hero-card h3 { margin: 0 0 10px; font-family: "Cormorant Garamond", serif; font-size: 2rem; line-height: 1; }
+    .hero-card p { margin: 0 0 20px; font-size: 0.96rem; color: rgba(255,255,255,0.88); }
+    .hero-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    .hero-card li { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: rgba(255,255,255,0.94); }
+
+    /* SECTIONS */
+    .intro-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: stretch; }
+    .intro-card, .image-card, .stat-card, .spot-panel, .contact-card, .hours-card, .faq-card, .process-card, .season-panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+    .intro-card { padding: 38px; }
+    .intro-card h2 { margin: 16px 0 16px; font-family: "Cormorant Garamond", serif; font-size: clamp(2.2rem, 4vw, 4rem); line-height: 0.96; letter-spacing: -0.025em; }
+    .intro-card p { margin: 0 0 18px; color: var(--muted); font-size: 1.02rem; }
+    .intro-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+    .stat-card { padding: 18px 18px 16px; background: linear-gradient(180deg, #fffdf8, #f7f1e7); }
+    .stat-card strong { display: block; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--primary-dark); margin-bottom: 4px; }
+    .stat-card span { color: var(--muted); font-size: 0.96rem; }
+    .image-card { min-height: 100%; overflow: hidden; position: relative; }
+    .image-card img { width: 100%; height: 100%; object-fit: cover; min-height: 580px; }
+    .image-card-badge { position: absolute; left: 24px; bottom: 24px; max-width: 320px; background: rgba(255,255,255,0.88); backdrop-filter: blur(10px); border-radius: 20px; padding: 18px 18px 16px; border: 1px solid rgba(30, 31, 26, 0.08); }
+    .image-card-badge strong { display: block; margin-bottom: 8px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--primary-dark); }
+
+    .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .product-card { position: relative; min-height: 420px; border-radius: 26px; overflow: hidden; color: var(--white); display: flex; align-items: end; box-shadow: var(--shadow); }
+    .product-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,17,13,0.04) 16%, rgba(15,17,13,0.72) 100%); z-index: 1; }
+    .product-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .product-card-content { position: relative; z-index: 2; padding: 24px; }
+    .product-card-content .chip { display: inline-flex; align-items: center; gap: 8px; min-height: 34px; padding: 0 12px; border-radius: 999px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.18); backdrop-filter: blur(10px); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 14px; }
+    .product-card h3 { margin: 0 0 10px; font-size: 1.45rem; line-height: 1.05; font-weight: 800; }
+    .product-card p { margin: 0; color: rgba(255,255,255,0.9); font-size: 0.96rem; max-width: 26ch; }
+
+    .season-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 30px; align-items: stretch; }
+    .season-panel { padding: 34px; background: linear-gradient(180deg, #fffdf8, #f4ede1); }
+    .season-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .season-pill { min-height: 42px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(95, 111, 63, 0.14); background: rgba(95, 111, 63, 0.06); color: var(--primary-dark); display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 700; }
+    .season-columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 18px; }
+    .season-list { background: rgba(255,255,255,0.68); border: 1px solid rgba(30,31,26,0.06); border-radius: 20px; padding: 18px; }
+    .season-list h4 { margin: 0 0 10px; font-size: 1rem; color: var(--primary-dark); letter-spacing: 0.08em; text-transform: uppercase; }
+    .season-list ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; color: var(--muted); }
+    .season-list li { display: flex; align-items: center; gap: 10px; }
+    .season-list li::before { content: "•"; color: var(--accent); font-weight: 900; font-size: 1rem; }
+    .season-visual { position: relative; overflow: hidden; border-radius: var(--radius-xl); min-height: 100%; box-shadow: var(--shadow); background: #d5c2a8; }
+    .season-visual img { width: 100%; height: 100%; min-height: 540px; object-fit: cover; }
+    .season-quote { position: absolute; right: 24px; bottom: 24px; max-width: 360px; padding: 20px; border-radius: 22px; background: rgba(255,255,255,0.88); backdrop-filter: blur(12px); color: var(--text); border: 1px solid rgba(30,31,26,0.06); }
+    .season-quote strong { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--primary-dark); margin-bottom: 8px; }
+
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .process-card { padding: 28px; background: linear-gradient(180deg, #fffdf8, #f6efe4); }
+    .step { width: 52px; height: 52px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; background: rgba(95, 111, 63, 0.1); color: var(--primary-dark); font-weight: 800; font-size: 1rem; margin-bottom: 18px; }
+    .process-card h3 { margin: 0 0 10px; font-size: 1.18rem; letter-spacing: 0.03em; }
+    .process-card p { margin: 0; color: var(--muted); }
+
+    .spot-wrap { display: grid; grid-template-columns: 1fr 1.02fr; gap: 30px; align-items: stretch; }
+    .spot-image { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow); min-height: 100%; }
+    .spot-image img { width: 100%; height: 100%; min-height: 560px; object-fit: cover; }
+    .spot-panel { padding: 40px; background: linear-gradient(180deg, #fbf7ef, #efe4d4); display: flex; flex-direction: column; justify-content: center; }
+    .spot-panel h2 { margin: 16px 0 16px; font-family: "Cormorant Garamond", serif; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 0.96; }
+    .spot-panel p { margin: 0 0 24px; color: var(--muted); font-size: 1.03rem; }
+    .feature-list { display: grid; gap: 14px; margin: 8px 0 28px; }
+    .feature-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; border-radius: 18px; background: rgba(255,255,255,0.72); border: 1px solid rgba(30,31,26,0.06); }
+    .feature-item .material-symbols-outlined { color: var(--primary-dark); font-size: 28px; }
+    .feature-item strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+    .feature-item span { display: block; color: var(--muted); font-size: 0.95rem; }
+
+    .b2b { position: relative; overflow: hidden; background: linear-gradient(180deg, rgba(23, 28, 18, 0.86), rgba(23, 28, 18, 0.92)), url("../assets/images/hero.png") center center / cover no-repeat; color: var(--white); border-radius: 34px; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.08); padding: 54px; }
+    .b2b-grid { display: grid; grid-template-columns: 1.2fr auto; gap: 28px; align-items: center; }
+    .b2b h2 { margin: 14px 0 12px; font-family: "Cormorant Garamond", serif; font-size: clamp(2.1rem, 4vw, 4rem); line-height: 0.94; }
+    .b2b p { margin: 0; color: rgba(255,255,255,0.86); max-width: 60ch; font-size: 1.02rem; }
+    .b2b .btn { background: var(--accent); color: #241b12; box-shadow: 0 14px 34px rgba(199, 143, 85, 0.18); }
+    .b2b .btn:hover { background: #d29a62; }
+
+    .faq-wrap { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 28px; align-items: start; }
+    .faq-card { padding: 32px; background: linear-gradient(180deg, #fffdf8, #f5eee2); }
+    .faq-intro h2 { margin: 16px 0 12px; font-family: "Cormorant Garamond", serif; font-size: clamp(2.2rem, 4vw, 4rem); line-height: 0.96; }
+    .faq-intro p { margin: 0; color: var(--muted); }
+    .faq-list details { border-bottom: 1px solid rgba(30,31,26,0.08); padding: 18px 0; }
+    .faq-list details:first-child { padding-top: 0; }
+    .faq-list summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: "+"; font-size: 1.3rem; line-height: 1; color: var(--primary-dark); flex-shrink: 0; }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-list p { margin: 12px 0 0; color: var(--muted); padding-right: 18px; }
+
+    .contact-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 24px; align-items: stretch; }
+    .contact-card, .hours-card { padding: 34px; }
+    .contact-card h2, .hours-card h3 { margin: 0 0 18px; font-family: "Cormorant Garamond", serif; font-size: clamp(2rem, 3.4vw, 3.4rem); line-height: 0.98; }
+    .contact-card p, .hours-card p { color: var(--muted); margin: 0 0 16px; }
+    .action-stack { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 18px; }
+    .action-stack .btn, .action-stack .btn-soft { min-width: 220px; }
+    .hours-list { display: grid; gap: 12px; margin-top: 16px; }
+    .hours-row { display: flex; justify-content: space-between; gap: 18px; padding: 12px 0; border-bottom: 1px solid rgba(30,31,26,0.08); }
+    .hours-row:last-child { border-bottom: 0; padding-bottom: 0; }
+    .hours-row span:first-child { color: var(--text); font-weight: 700; }
+    .hours-row span:last-child { color: var(--muted); }
+    .contact-note { margin-top: 16px !important; font-size: 0.94rem; }
+
+    .footer { padding: 34px 0 44px; color: #6a6a60; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid rgba(30,31,26,0.08); padding-top: 24px; }
+    .footer-brand { display: flex; flex-direction: column; gap: 4px; }
+    .footer-brand strong { color: var(--text); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.92rem; }
+    .footer-brand span { font-size: 0.9rem; }
+
+    @media (max-width: 1080px) {
+      .nav-links, .nav-cta .nav-phone, .nav-cta .btn-soft { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .mobile-panel { position: fixed; inset: 78px 16px auto 16px; background: rgba(26, 28, 23, 0.98); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: 18px; display: none; box-shadow: 0 18px 40px rgba(0,0,0,0.35); z-index: 1001; }
+      .mobile-panel.open { display: block; }
+      .mobile-panel a { display: block; color: rgba(255,255,255,0.94); padding: 14px 8px; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .mobile-panel a:last-child { border-bottom: 0; }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid, .intro-wrap, .season-layout, .spot-wrap, .faq-wrap, .contact-grid, .b2b-grid { grid-template-columns: 1fr; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: 1fr; }
+      .hero-card { max-width: 520px; }
+      .image-card img, .spot-image img, .season-visual img { min-height: 420px; }
+      .b2b { padding: 40px 30px; }
+    }
+
+    @media (max-width: 720px) {
+      .section { padding: 78px 0; }
+      .section-tight { padding: 56px 0; }
+      .hero { min-height: auto; }
+      .hero-grid { padding: 44px 0 56px; }
+      .hero h1 { font-size: clamp(2.8rem, 13vw, 4.6rem); }
+      .hero-actions, .hero-meta, .action-stack { flex-direction: column; align-items: stretch; }
+      .hero-card { padding: 22px; }
+      .intro-card, .season-panel, .spot-panel, .contact-card, .hours-card, .faq-card, .process-card { padding: 24px; }
+      .product-grid, .season-columns, .intro-mini-grid { grid-template-columns: 1fr; }
+      .product-card { min-height: 360px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    .mobile-panel { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="#home" class="logo">
+        <span class="logo-title">Antonis Garden</span>
+        <span class="logo-sub">MORIA FARM</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#products">Production</a></li>
+        <li><a href="#seasonal">Seasons</a></li>
+        <li><a href="#spot">Farm Spot</a></li>
+        <li><a href="#b2b">Partnerships</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <div class="lang-switcher" style="padding-right: 12px; border-right: 1px solid rgba(0,0,0,0.1); margin-right: 12px; font-weight: 700; font-size: 0.85rem;">
+          <a href="../index.html" style="color: #666;">GR</a> | <span style="color: var(--primary);">EN</span>
+        </div>
+        <a class="nav-phone" href="tel:+306982966408">6982966408</a>
+        <a class="btn-soft" href="https://wa.me/306982966408">WhatsApp</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-panel" id="mobilePanel">
+    <div style="padding: 14px 8px; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; gap: 10px; font-size: 0.9rem; font-weight: 700;">
+      <a href="../index.html" style="color: rgba(255,255,255,0.6);">GREEK</a>
+      <span style="color: rgba(255,255,255,0.2);">|</span>
+      <span style="color: var(--accent);">ENGLISH</span>
+    </div>
+    <a href="#about">Our Story</a>
+    <a href="#products">Production</a>
+    <a href="#seasonal">Seasons</a>
+    <a href="#spot">Farm Spot</a>
+    <a href="#b2b">Partnerships</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="https://wa.me/306982966408">WhatsApp</a>
+    <a href="tel:+306982966408">Call</a>
+  </div>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">
+          <span class="material-symbols-outlined" style="font-size:18px;">eco</span>
+          Respecting nature
+        </span>
+        <h1>Directly from the earth of Lesvos</h1>
+        <p>Fresh garden produce, seasonal fruits, eggs and olive oil from Moria. Cultivated with care, daily contact with the earth and true freshness from the producer to your table.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn">View our production</a>
+          <a href="https://wa.me/306982966408" class="btn-outline">Send WhatsApp</a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-pill"><span class="material-symbols-outlined" style="font-size:20px;">location_on</span>Moria, Lesvos</div>
+          <div class="hero-pill"><span class="material-symbols-outlined" style="font-size:20px;">schedule</span>Mon - Sat 08:00 - 20:00</div>
+          <div class="hero-pill"><span class="material-symbols-outlined" style="font-size:20px;">storefront</span>Mini Market & Production</div>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h3>What you can find</h3>
+        <p>Seasonal products, physical purchase point and direct contact for availability.</p>
+        <ul>
+          <li><span class="material-symbols-outlined">spa</span> Garden produce and seasonal vegetables</li>
+          <li><span class="material-symbols-outlined">nutrition</span> Fruits that ripen naturally</li>
+          <li><span class="material-symbols-outlined">oil_barrel</span> Olive oil from Moria</li>
+          <li><span class="material-symbols-outlined">egg</span> Fresh eggs from our farm</li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="container intro-wrap">
+        <div class="intro-card">
+          <span class="eyebrow dark">Our Story</span>
+          <h2>The land, Antonis and the rhythm of each season</h2>
+          <p>At Antonis' Garden, production is not just a job — it's a daily relationship with the land of Moria. Every crop follows its natural season, with care, persistence and respect for flavor.</p>
+          <p>Our goal is to give the people of Lesvos fresh, honest and quality products, without exaggerations and without distance from the producer.</p>
+          <div class="intro-mini-grid">
+            <div class="stat-card"><strong>Daily contact</strong><span>Learn what's available immediately by phone or WhatsApp.</span></div>
+            <div class="stat-card"><strong>Seasonal production</strong><span>Availability follows the natural cycle of the earth.</span></div>
+            <div class="stat-card"><strong>Physical point</strong><span>Pickup from our spot in Moria and mini market.</span></div>
+            <div class="stat-card"><strong>Partnerships</strong><span>Service for professionals in Mytilene and surrounding villages.</span></div>
+          </div>
+        </div>
+        <div class="image-card">
+          <img src="../assets/images/farm.png" alt="Antonis Farm in Moria, Lesvos" />
+          <div class="image-card-badge"><strong>Moria Farm</strong>Freshness, seasonality and a natural purchase point for those who want a more direct relationship with the producer.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="products">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow dark">Our Production</span>
+          <h2>Fresh products with a clear identity</h2>
+          <p>The core of our work is simplicity: good products, correct harvest time and immediate distribution.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="../assets/images/hero.png" alt="Vegetables" />
+            <div class="product-card-content"><div class="chip">Vegetables</div><h3>Fresh for the daily kitchen</h3><p>Products cut based on the season and availability of the day.</p></div>
+          </article>
+          <article class="product-card">
+            <img src="../assets/images/farm.png" alt="Fruits" />
+            <div class="product-card-content"><div class="chip">Seasonal Fruits</div><h3>Flavors that ripen naturally</h3><p>Without rush, with their own time and the taste you expect from the earth.</p></div>
+          </article>
+          <article class="product-card">
+            <img src="../assets/images/hero.png" alt="Olive Oil" />
+            <div class="product-card-content"><div class="chip">Olive Oil</div><h3>Production rooted in Lesvos land</h3><p>One of the most characteristic products of our region, with authentic character.</p></div>
+          </article>
+          <article class="product-card">
+            <img src="../assets/images/farm.png" alt="Eggs" />
+            <div class="product-card-content"><div class="chip">Fresh Eggs</div><h3>From the farm to the table</h3><p>Simple, honest product that completes the small daily supply of the home.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="seasonal">
+      <div class="container season-layout">
+        <div class="season-panel">
+          <span class="eyebrow dark">Seasonal Calendar</span>
+          <div class="section-head" style="margin-bottom: 0;">
+            <h2>Nature's rhythm dictates our harvest</h2>
+            <p>Availability follows the season, ensuring the highest quality and taste.</p>
+          </div>
+          <div class="season-tabs">
+            <div class="season-pill"><span class="material-symbols-outlined">local_florist</span>Spring</div>
+            <div class="season-pill"><span class="material-symbols-outlined">wb_sunny</span>Summer</div>
+            <div class="season-pill"><span class="material-symbols-outlined">eco</span>Autumn</div>
+            <div class="season-pill"><span class="material-symbols-outlined">ac_unit</span>Winter</div>
+          </div>
+          <div class="season-columns">
+            <div class="season-list"><h4>Spring</h4><ul><li>Zucchini</li><li>Peppers</li><li>Beets</li><li>Lettuce</li><li>Arugula</li><li>Spring onions</li></ul></div>
+            <div class="season-list"><h4>Summer</h4><ul><li>Tomatoes</li><li>Peppers</li><li>Eggplants</li><li>Zucchini</li><li>Arugula</li></ul></div>
+            <div class="season-list"><h4>Autumn</h4><ul><li>Fresh olive oil</li><li>Figs</li><li>Olives</li><li>Tomatoes</li></ul></div>
+            <div class="season-list"><h4>Winter</h4><ul><li>Cauliflower</li><li>Broccoli</li><li>Cabbage</li></ul></div>
+          </div>
+        </div>
+        <div class="season-visual">
+          <img src="../assets/images/hero.png" alt="Seasonal Harvest" />
+          <div class="season-quote"><strong>Seasonality</strong>The best taste doesn't come from rushing. It comes when each product comes out at the right time.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="how-to-order">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow dark">How to order</span>
+          <h2>Simple process, direct communication</h2>
+          <p>To know what's available, a message or phone call is enough.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-card"><div class="step">01</div><h3>Check today's harvest</h3><p>Contact us via WhatsApp or phone for daily availability.</p></div>
+          <div class="process-card"><div class="step">02</div><h3>Confirm your order</h3><p>We arrange quantity, timing, and whether you'll pickup or require delivery.</p></div>
+          <div class="process-card"><div class="step">03</div><h3>Easy Pickup</h3><p>Pickup from our spot in Moria or delivery upon arrangement.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="spot">
+      <div class="container spot-wrap">
+        <div class="spot-image"><img src="../assets/images/farm.png" alt="Farm Shop" /></div>
+        <div class="spot-panel">
+          <span class="eyebrow dark">Our Spot</span>
+          <h2>Our spot in Moria & the mini market</h2>
+          <p>At our physical point in Moria you will find our own fresh production, as well as an organized <strong>mini market</strong> for daily needs.</p>
+          <div class="feature-list">
+            <div class="feature-item"><span class="material-symbols-outlined">storefront</span><div><strong>Local Shop</strong><span>Production and essential goods in one place.</span></div></div>
+            <div class="feature-item"><span class="material-symbols-outlined">inventory_2</span><div><strong>Real-time Info</strong><span>Learn what is available on the same day.</span></div></div>
+            <div class="feature-item"><span class="material-symbols-outlined">workspace_premium</span><div><strong>Farmer Direct</strong><span>No middleman between the farmer and the consumer.</span></div></div>
+          </div>
+          <div class="hero-actions" style="margin-top:0;">
+            <a href="https://www.google.com/maps/search/?api=1&query=Moria+Lesvos" target="_blank" rel="noopener noreferrer" class="btn">Open in Maps</a>
+            <a href="tel:+306982966408" class="btn-soft">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="b2b">
+      <div class="container"><div class="b2b"><div class="b2b-grid"><div><span class="eyebrow">B2B Partnerships</span><h2>Wholesale for catering & professionals</h2><p>Serving professionals in Mytilene who value quality and known origin.</p></div><div><a href="https://wa.me/306982966408" class="btn">Wholesale Inquiry</a></div></div></div></div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div class="faq-card faq-intro"><span class="eyebrow dark">FAQ</span><h2>Common Questions</h2><p>Quick answers about our service and products.</p></div>
+        <div class="faq-card faq-list">
+          <details><summary>How do I check availability?</summary><p>Call or WhatsApp us. Availability changes daily.</p></details>
+          <details><summary>Do you offer home delivery?</summary><p>Mainly pickup in Moria. Delivery can be arranged in some cases.</p></details>
+          <details><summary>Do you accept card payments?</summary><p>Yes, we accept all major cards at our shop.</p></details>
+          <details><summary>Is there a mini market?</summary><p>Yes, we carry both our fresh produce and grocery essentials.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><strong>Antonis Garden</strong><span>Moria Lesvos • Production & Mini Market</span></div>
+      <div>© 2026 • Respecting nature</div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const mobilePanel = document.getElementById("mobilePanel");
+    if (toggle && mobilePanel) {
+      toggle.addEventListener("click", () => mobilePanel.classList.toggle("open"));
+      mobilePanel.querySelectorAll("a").forEach(link => link.addEventListener("click", () => mobilePanel.classList.remove("open")));
+      document.addEventListener("click", e => { if (!mobilePanel.contains(e.target) && !toggle.contains(e.target)) mobilePanel.classList.remove("open"); });
+    }
+  </script>
+</body>
+</html>
