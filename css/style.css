@@ -42,7 +42,9 @@ h1, h2, h3, h4 {
     padding: 0 1.5rem;
 }
 
-/* Navbar Redesign */
+.text-center { text-align: center; }
+
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -51,7 +53,6 @@ h1, h2, h3, h4 {
     padding: 1rem 0;
     z-index: 1000;
     box-shadow: var(--shadow);
-    transition: var(--transition);
 }
 
 .navbar .container {
@@ -75,20 +76,18 @@ h1, h2, h3, h4 {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--primary);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
 }
 
-.nav-links a:hover {
-    color: var(--secondary);
-}
+.nav-links a:hover { color: var(--secondary); }
 
 .menu-toggle {
     display: none;
@@ -98,9 +97,9 @@ h1, h2, h3, h4 {
     cursor: pointer;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
-    height: 90vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,34 +114,30 @@ h1, h2, h3, h4 {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.45);
 }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
+.hero-content { position: relative; z-index: 1; }
 
 .badge {
     background: var(--secondary);
     color: var(--white);
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 4px;
     font-weight: 700;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
     display: inline-block;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
 }
 
-/* Availability Block (New) */
+/* Availability Block */
 .live-block {
-    margin-top: -80px;
+    margin-top: -60px;
     position: relative;
     z-index: 10;
 }
@@ -155,7 +150,7 @@ h1, h2, h3, h4 {
 
 .live-card {
     background: var(--white);
-    padding: 2rem;
+    padding: 1.8rem;
     border-radius: 8px;
     box-shadow: var(--shadow-lg);
     border-top: 5px solid var(--accent);
@@ -165,105 +160,127 @@ h1, h2, h3, h4 {
 .live-card.blue { border-color: var(--primary); }
 
 .live-card h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--primary);
     margin-bottom: 1rem;
+    letter-spacing: 0.05em;
 }
 
 .live-card ul {
     list-style: none;
     color: var(--text-light);
+    font-size: 0.9rem;
 }
 
-/* Product Section Redesign */
-.products-section {
-    padding: 6rem 0;
+/* Seasonal Section */
+.seasonal-section { padding: 8rem 0 4rem; }
+
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-header h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem; }
+
+.seasonal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.season-card {
     background: var(--light-bg);
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: var(--transition);
 }
 
-.section-header h2 {
-    text-align: center;
-    color: var(--primary);
-    font-size: 2.5rem;
-    margin-bottom: 4rem;
-}
+.season-head { margin-bottom: 1.5rem; }
+.season-head span { font-size: 2.5rem; color: var(--secondary); margin-bottom: 0.5rem; }
+.season-head h3 { font-size: 1.2rem; color: var(--primary); }
+
+.season-card ul { list-style: none; font-weight: 600; font-size: 0.95rem; line-height: 2; }
+
+.spring { border-bottom: 4px solid #f8bbd0; }
+.summer { border-bottom: 4px solid #fff59d; }
+.autumn { border-bottom: 4px solid #ffccbc; }
+.winter { border-bottom: 4px solid #b3e5fc; }
+
+/* Products Section */
+.products-section { padding: 6rem 0; background: var(--light-bg); }
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .product-card {
     background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    text-align: center;
     padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
+.product-card .icon { font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem; }
 
-.product-card .icon {
-    font-size: 2.5rem;
-    color: var(--secondary);
+/* Spot Section */
+.spot-section { padding: 8rem 0; }
+.spot-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
+.spot-image img { width: 100%; border-radius: 12px; box-shadow: var(--shadow-lg); }
+
+.spot-features { margin-top: 2.5rem; display: grid; gap: 1.5rem; }
+.spot-feat { display: flex; align-items: center; gap: 1rem; }
+.spot-feat span { color: var(--secondary); font-size: 2rem; }
+.spot-feat p { font-weight: 700; color: var(--primary); }
+
+/* B2B Section */
+.b2b-section { padding: 6rem 0; background: var(--primary); color: var(--white); }
+.b2b-section h2 { color: var(--accent); margin-bottom: 1.5rem; }
+.b2b-section p { max-width: 800px; margin: 0 auto 2.5rem; font-size: 1.1rem; }
+
+/* FAQ Section */
+.faq-section { padding: 6rem 0; }
+.faq-accordion { max-width: 800px; margin: 0 auto; }
+
+details { 
+    background: var(--light-bg); 
+    border-radius: 8px; 
     margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
 }
 
-.product-card h3 {
-    color: var(--primary);
-    font-size: 1.2rem;
-}
-
-/* Mini Market Section (New) */
-.mini-market {
-    padding: 4rem 0;
-    background: var(--primary);
-    color: var(--white);
-}
-
-.market-content {
+summary { 
+    font-weight: 700; 
+    color: var(--primary); 
+    list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
-.market-content h2 { color: var(--accent); font-size: 2rem; }
+summary::after { content: "+"; font-size: 1.5rem; color: var(--secondary); }
+details[open] summary::after { content: "-"; }
 
-/* Contact Section Redesign */
-.contact-section {
-    padding: 6rem 0;
-}
+.faq-content { padding-top: 1rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 1rem; }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-}
+/* Contact & Buttons */
+.contact-section { padding: 8rem 0; }
+.contact-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; }
 
-.action-buttons {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
+.action-buttons { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; }
 .btn-big {
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 8px;
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: var(--transition);
 }
 
@@ -271,21 +288,23 @@ h1, h2, h3, h4 {
 .btn-call { background: var(--primary); color: var(--white); }
 .btn-maps { background: var(--secondary); color: var(--white); }
 
-.btn-big:hover { filter: brightness(1.1); transform: scale(1.02); }
+.hours-card { background: var(--light-bg); padding: 3rem; border-radius: 12px; }
+.hours-card h3 { color: var(--primary); margin-bottom: 1.5rem; }
+.hours-card .small { font-size: 0.8rem; margin-top: 1.5rem; font-style: italic; }
 
 /* Footer */
-.footer {
-    background: #1a1a1a;
-    color: #888;
-    padding: 4rem 0 2rem;
-    text-align: center;
-}
-
+.footer { background: #111; color: #777; padding: 4rem 0 2rem; text-align: center; }
 .footer h3 { color: var(--white); margin-bottom: 1rem; }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .nav-links { display: none; }
+    .menu-toggle { display: block; }
+    .seasonal-grid, .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .spot-grid, .contact-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 768px) {
-    .live-grid, .product-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2.5rem; }
-    .contact-grid { grid-template-columns: 1fr; }
+    .live-grid, .seasonal-grid, .product-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.2rem; }
 }

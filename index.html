@@ -27,9 +27,10 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Αρχική</a></li>
-                <li><a href="#availability">Διαθεσιμότητα</a></li>
+                <li><a href="#seasonal">Εποχές</a></li>
                 <li><a href="#products">Προϊόντα</a></li>
-                <li><a href="#market">Mini Market</a></li>
+                <li><a href="#spot">Το Σημείο</a></li>
+                <li><a href="#b2b">Συνεργασίες</a></li>
                 <li><a href="#contact">Επικοινωνία</a></li>
             </ul>
             <button class="menu-toggle" aria-label="Toggle Menu">
@@ -53,8 +54,6 @@
             <div class="live-card">
                 <h3>ΣΗΜΕΡΑ ΔΙΑΘΕΣΙΜΑ</h3>
                 <ul>
-                    <!-- Συμπληρώστε τα προϊόντα εδώ -->
-                    <li>...</li>
                     <li>...</li>
                     <li>...</li>
                 </ul>
@@ -62,16 +61,73 @@
             <div class="live-card green">
                 <h3>ΑΥΤΗ ΤΗΝ ΕΒΔΟΜΑΔΑ</h3>
                 <ul>
-                    <!-- Συμπληρώστε τα προϊόντα εδώ -->
-                    <li>...</li>
                     <li>...</li>
                 </ul>
             </div>
             <div class="live-card blue">
                 <h3>ΚΑΤΟΠΙΝ ΣΥΝΕΝΝΟΗΣΗΣ</h3>
                 <ul>
-                    <!-- Συμπληρώστε τα προϊόντα εδώ -->
                     <li>...</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tι βρίσκεις ανά εποχή (New Section) -->
+    <section id="seasonal" class="seasonal-section container">
+        <div class="section-header">
+            <h2>ΤΙ ΒΡΙΣΚΕΙΣ ΑΝΑ ΕΠΟΧΗ</h2>
+            <p>Η φύση έχει το δικό της ημερολόγιο. Δείτε τι καλλιεργούμε κάθε περίοδο.</p>
+        </div>
+        <div class="seasonal-grid">
+            <div class="season-card spring">
+                <div class="season-head">
+                    <span class="material-symbols-outlined">local_florist</span>
+                    <h3>ΑΝΟΙΞΗ</h3>
+                </div>
+                <ul>
+                    <li>Κολοκυθάκια</li>
+                    <li>Πιπεριές</li>
+                    <li>Πατζάρια</li>
+                    <li>Μαρούλι</li>
+                    <li>Ρόκα</li>
+                    <li>Φρέσκα κρεμμυδάκια</li>
+                </ul>
+            </div>
+            <div class="season-card summer">
+                <div class="season-head">
+                    <span class="material-symbols-outlined">wb_sunny</span>
+                    <h3>ΚΑΛΟΚΑΙΡΙ</h3>
+                </div>
+                <ul>
+                    <li>Ντομάτες</li>
+                    <li>Πιπεριές</li>
+                    <li>Μελιτζάνες</li>
+                    <li>Κολοκυθάκι</li>
+                    <li>Ρόκα</li>
+                </ul>
+            </div>
+            <div class="season-card autumn">
+                <div class="season-head">
+                    <span class="material-symbols-outlined">eco</span>
+                    <h3>ΦΘΙΝΟΠΩΡΟ</h3>
+                </div>
+                <ul>
+                    <li>Φρέσκο ελαιόλαδο</li>
+                    <li>Σύκα</li>
+                    <li>Ελιές</li>
+                    <li>Ντομάτες</li>
+                </ul>
+            </div>
+            <div class="season-card winter">
+                <div class="season-head">
+                    <span class="material-symbols-outlined">ac_unit</span>
+                    <h3>ΧΕΙΜΩΝΑΣ</h3>
+                </div>
+                <ul>
+                    <li>Κουνουπίδι</li>
+                    <li>Μπρόκολο</li>
+                    <li>Λάχανο</li>
                 </ul>
             </div>
         </div>
@@ -85,79 +141,114 @@
             </div>
             
             <div class="product-grid">
-                <!-- 1. Ζαρζαβατικά -->
                 <div class="product-card">
                     <span class="material-symbols-outlined icon">eco</span>
                     <h3>ΖΑΡΖΑΒΑΤΙΚΑ</h3>
-                    <p>Ντομάτες, αγγούρια, πιπεριές και μελιτζάνες της εποχής.</p>
+                    <p>Φρέσκα προϊόντα καθημερινής χρήσης από το χωράφι μας.</p>
                 </div>
-                <!-- 2. Φρούτα εποχής -->
                 <div class="product-card">
                     <span class="material-symbols-outlined icon">nutrition</span>
                     <h3>ΦΡΟΥΤΑ ΕΠΟΧΗΣ</h3>
-                    <p>Ό,τι καλύτερο προσφέρει η Λεσβιακή γη κάθε μήνα.</p>
+                    <p>Αυθεντικές γεύσεις που μεγαλώνουν φυσικά.</p>
                 </div>
-                <!-- 3. Ελαιόλαδο -->
                 <div class="product-card">
                     <span class="material-symbols-outlined icon">oil_barrel</span>
                     <h3>ΕΛΑΙΟΛΑΔΟ</h3>
-                    <p>Εξαιρετικό παρθένο ελαιόλαδο από τη Μόρια.</p>
+                    <p>Παραδοσιακή παραγωγή από τη Μόρια.</p>
                 </div>
-                <!-- 4. Φρέσκα Αυγά -->
                 <div class="product-card">
                     <span class="material-symbols-outlined icon">egg</span>
                     <h3>ΦΡΕΣΚΑ ΑΥΓΑ</h3>
-                    <p>Από κότες ελευθέρας βοσκής στο κτήμα μας.</p>
+                    <p>Από το κτήμα μας κατευθείαν στο τραπέζι σας.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mini Market Section -->
-    <section id="market" class="mini-market">
-        <div class="container market-content">
-            <div>
-                <h2>MINI MARKET</h2>
-                <p>Στον χώρο μας λειτουργεί και τοπικό mini market για την καθημερινή σας εξυπηρέτηση.</p>
+    <!-- Το Σημείο μας στη Μόρια (Expanded Section) -->
+    <section id="spot" class="spot-section">
+        <div class="container spot-grid">
+            <div class="spot-content">
+                <div class="badge">ΤΟ ΣΗΜΕΙΟ ΜΑΣ</div>
+                <h2>ΤΟ ΣΗΜΕΙΟ ΜΑΣ ΣΤΗ ΜΟΡΙΑ & MINI MARKET</h2>
+                <p>Επισκεφθείτε μας στο φυσικό μας σημείο στη Μόρια Λέσβου. Εδώ θα βρείτε όχι μόνο τη δική μας φρέσκια παραγωγή, αλλά και ένα πλήρως εξοπλισμένο **Mini Market** για τις καθημερινές σας ανάγκες.</p>
+                <div class="spot-features">
+                    <div class="spot-feat">
+                        <span class="material-symbols-outlined">storefront</span>
+                        <p>Τοπικά Προϊόντα & Είδη Πρώτης Ανάγκης</p>
+                    </div>
+                    <div class="spot-feat">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <p>Εγγυημένη Φρεσκάδα παραγωγού</p>
+                    </div>
+                </div>
             </div>
-            <span class="material-symbols-outlined" style="font-size: 5rem; opacity: 0.5;">storefont</span>
+            <div class="spot-image">
+                <img src="assets/images/farm.png" alt="Το σημείο μας">
+            </div>
         </div>
     </section>
 
-    <!-- Story Section (Reduced for focus) -->
-    <section id="farm" style="padding: 6rem 0;">
-        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-            <img src="assets/images/farm.png" alt="Το αγρόκτημα" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
-            <div>
-                <h2 style="color: var(--primary); margin-bottom: 2rem;">Ο ΑΝΤΩΝΗΣ ΚΑΙ Η ΓΗ ΤΗΣ ΜΟΡΙΑΣ</h2>
-                <p>Με αγάπη για τον τόπο μας, προσφέρουμε προϊόντα που καλλιεργούνται με παραδοσιακό τρόπο και απόλυτο σεβασμό στη φύση.</p>
+    <!-- Επαγγελματικές Συνεργασίες (New Section) -->
+    <section id="b2b" class="b2b-section">
+        <div class="container text-center">
+            <h2>ΕΠΑΓΓΕΛΜΑΤΙΚΕΣ ΣΥΝΕΡΓΑΣΙΕΣ</h2>
+            <p>Προμηθεύουμε ταβέρνες, καταστήματα εστίασης και επαγγελματίες στη **Μυτιλήνη και τα γύρω χωριά**. Εξασφαλίστε σταθερή ποιότητα και φρεσκάδα για την επιχείρησή σας.</p>
+            <div class="b2b-actions">
+                <a href="https://wa.me/306982966408" class="btn-big btn-whatsapp">ΕΝΔΙΑΦΕΡΟΜΑΙ ΓΙΑ ΧΟΝΔΡΙΚΗ</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section Redesign -->
+    <!-- FAQ Section (New Section) -->
+    <section id="faq" class="faq-section container">
+        <div class="section-header">
+            <h2>ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</h2>
+        </div>
+        <div class="faq-accordion">
+            <details>
+                <summary>Δέχεστε πληρωμές με κάρτα;</summary>
+                <div class="faq-content">
+                    <p>Ναι, στο φυσικό μας σημείο (Mini Market) δεχόμαστε όλες τις χρεωστικές και πιστωτικές κάρτες.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Πού ακριβώς βρίσκεται το αγρόκτημα;</summary>
+                <div class="faq-content">
+                    <p>Βρισκόμαστε στη Μόρια Λέσβου. Μπορείτε να βρείτε τις ακριβείς οδηγίες πατώντας το κουμπί "Άνοιγμα σε Google Maps" παρακάτω.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Κάνετε παράδοση κατ' οίκον (Delivery);</summary>
+                <div class="faq-content">
+                    <p>Η διάθεση των προϊόντων γίνεται κυρίως από το σημείο μας στη Μόρια. Για μεγάλες παραγγελίες ή συνεργασίες, επικοινωνήστε μαζί μας.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Πώς μπορώ να μάθω τι είναι διαθέσιμο σήμερα;</summary>
+                <div class="faq-content">
+                    <p>Μπορείτε να μας καλέσετε στο 6982966408 ή να μας στείλετε ένα μήνυμα στο WhatsApp για άμεση ενημέρωση.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact" class="contact-section container">
         <div class="contact-grid">
             <div>
                 <h2 style="color: var(--primary); margin-bottom: 2rem;">ΕΠΙΚΟΙΝΩΝΙΑ</h2>
-                <p>Βρείτε μας στη Μόρια ή καλέστε μας για την παραγγελία σας.</p>
-                
                 <div class="action-buttons">
-                    <a href="https://wa.me/306982966408" class="btn-big btn-whatsapp">
-                        ΣΤΕΙΛΕ WHATSAPP
-                    </a>
-                    <a href="tel:+306982966408" class="btn-big btn-call">
-                        ΚΛΗΣΗ ΤΩΡΑ: 6982966408
-                    </a>
-                    <a href="https://maps.google.com/?q=Μόρια,Λέσβος" target="_blank" class="btn-big btn-maps">
-                        ΑΝΟΙΓΜΑ ΣΕ GOOGLE MAPS
-                    </a>
+                    <a href="https://wa.me/306982966408" class="btn-big btn-whatsapp">ΣΤΕΙΛΕ WHATSAPP</a>
+                    <a href="tel:+306982966408" class="btn-big btn-call">ΚΛΗΣΗ: 6982966408</a>
+                    <a href="https://maps.google.com/?q=Μόρια,Λέσβος" target="_blank" class="btn-big btn-maps">GOOGLE MAPS</a>
                 </div>
             </div>
-            <div style="background: var(--light-bg); padding: 3rem; border-radius: 8px;">
-                <h3 style="color: var(--primary); margin-bottom: 1.5rem;">ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</h3>
+            <div class="hours-card">
+                <h3>ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</h3>
                 <p><strong>Δευτέρα - Σάββατο:</strong> 08:00 - 20:00</p>
                 <p><strong>Κυριακή:</strong> Κλειστά</p>
+                <p class="small">* Το ωράριο ενδέχεται να αλλάζει ανάλογα με την εποχή.</p>
             </div>
         </div>
     </section>
