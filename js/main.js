@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const seasonLists = document.querySelectorAll(".season-list");
 
   if (seasonTabs.length > 0) {
+    const seasonImg = document.querySelector(".season-visual img");
+
     seasonTabs.forEach((tab) => {
       tab.addEventListener("click", () => {
         const target = tab.getAttribute("data-season");
@@ -42,6 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
             list.classList.add("active");
           }
         });
+
+        // Trigger Image Animation
+        if (seasonImg) {
+          seasonImg.classList.add("scaling");
+          setTimeout(() => {
+            seasonImg.classList.remove("scaling");
+          }, 800);
+        }
       });
     });
   }
