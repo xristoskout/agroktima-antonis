@@ -135,6 +135,29 @@ h1, h2, h3, h4 {
     margin-bottom: 1rem;
 }
 
+.btn-custom-hero {
+    display: inline-block;
+    background-color: #9ccd62; /* Light Green from reference */
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 1.2rem 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.15);
+    transition: var(--transition);
+    letter-spacing: 0.05em;
+    font-size: 1.1rem;
+}
+
+.btn-custom-hero:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    background-color: #a8d672;
+}
+
 /* Order Process Section */
 .order-process-section { padding: 8rem 0 4rem; text-align: center; }
 
