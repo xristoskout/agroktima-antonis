@@ -135,41 +135,55 @@ h1, h2, h3, h4 {
     margin-bottom: 1rem;
 }
 
-/* Availability Block */
-.live-block {
-    margin-top: -60px;
-    position: relative;
-    z-index: 10;
-}
+/* Order Process Section */
+.order-process-section { padding: 8rem 0 4rem; text-align: center; }
 
-.live-grid {
+.process-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
-.live-card {
-    background: var(--white);
-    padding: 1.8rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow-lg);
-    border-top: 5px solid var(--accent);
+.process-step {
+    background: var(--light-bg);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    position: relative;
+    transition: var(--transition);
 }
 
-.live-card.green { border-color: var(--secondary); }
-.live-card.blue { border-color: var(--primary); }
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
 
-.live-card h3 {
-    font-size: 1rem;
-    color: var(--primary);
+.step-num {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.process-step h3 {
     margin-bottom: 1rem;
-    letter-spacing: 0.05em;
+    color: var(--primary);
+    font-size: 1.1rem;
 }
 
-.live-card ul {
-    list-style: none;
+.process-step p {
+    font-size: 0.95rem;
     color: var(--text-light);
-    font-size: 0.9rem;
 }
 
 /* Seasonal Section */
