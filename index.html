@@ -9,10 +9,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600&display=swap" />
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -23,13 +23,14 @@
         <div class="container">
             <a href="#" class="logo">
                 <span class="logo-title">Ο Κήπος του Αντώνη</span>
-                <span class="logo-subtitle">Μόρια Λέσβου</span>
+                <span class="logo-subtitle">ΑΓΡΟΚΤΗΜΑ ΜΟΡΙΑ</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Αρχική</a></li>
+                <li><a href="#availability">Διαθεσιμότητα</a></li>
                 <li><a href="#products">Προϊόντα</a></li>
-                <li><a href="#farm">Το Αγρόκτημα</a></li>
-                <li><a href="#contact" class="btn-primary">Επικοινωνία</a></li>
+                <li><a href="#market">Mini Market</a></li>
+                <li><a href="#contact">Επικοινωνία</a></li>
             </ul>
             <button class="menu-toggle" aria-label="Toggle Menu">
                 <span class="material-symbols-outlined">menu</span>
@@ -38,43 +39,41 @@
     </nav>
 
     <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-bg">
-            <img src="assets/images/hero.png" alt="Ελαιώνας στη Λέσβο">
-        </div>
+    <header id="home" class="hero" style="background-image: url('assets/images/hero.png');">
         <div class="hero-content container">
-            <div class="badge">Απευθείας από τον Παραγωγό</div>
-            <h1>Η Γεύση της Μόριας <br> στο Τραπέζι σας</h1>
-            <p>Καλλιεργούμε με αγάπη και σεβασμό στη γη της Λέσβου, προσφέροντας την πιο φρέσκια σοδειά της εποχής.</p>
-            <div class="hero-actions">
-                <a href="#products" class="btn-primary-lg">Τι έχουμε τώρα</a>
-                <a href="tel:+306982966408" class="btn-secondary-lg">
-                    <span class="material-symbols-outlined">call</span>
-                    6982966408
-                </a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span class="material-symbols-outlined">expand_more</span>
+            <div class="badge">Με σεβασμό στη φύση</div>
+            <h1>ΑΠΕΥΘΕΙΑΣ ΑΠΟ ΤΗ ΓΗ ΤΗΣ ΛΕΣΒΟΥ</h1>
+            <p>Φρεσκάδα, ποιότητα και ο αληθινός ρυθμός της φύσης σε κάθε συγκομιδή.</p>
         </div>
     </header>
 
-    <!-- Features Section -->
-    <section class="features container">
-        <div class="feature-card">
-            <span class="material-symbols-outlined">eco</span>
-            <h3>100% Φυσικό</h3>
-            <p>Προϊόντα που μεγαλώνουν με τον ρυθμό της φύσης, χωρίς περιττές παρεμβάσεις.</p>
-        </div>
-        <div class="feature-card">
-            <span class="material-symbols-outlined">schedule</span>
-            <h3>Πρωινή Συγκομιδή</h3>
-            <p>Μαζεύουμε τα προϊόντα μας καθημερινά για να φτάνουν σε εσάς απόλυτα φρέσκα.</p>
-        </div>
-        <div class="feature-card">
-            <span class="material-symbols-outlined">local_shipping</span>
-            <h3>Άμεση Διάθεση</h3>
-            <p>Από το χωράφι του Αντώνη κατευθείαν στον καταναλωτή.</p>
+    <!-- Live Availability (Live Block) -->
+    <section id="availability" class="live-block container">
+        <div class="live-grid">
+            <div class="live-card">
+                <h3>ΣΗΜΕΡΑ ΔΙΑΘΕΣΙΜΑ</h3>
+                <ul>
+                    <!-- Συμπληρώστε τα προϊόντα εδώ -->
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                </ul>
+            </div>
+            <div class="live-card green">
+                <h3>ΑΥΤΗ ΤΗΝ ΕΒΔΟΜΑΔΑ</h3>
+                <ul>
+                    <!-- Συμπληρώστε τα προϊόντα εδώ -->
+                    <li>...</li>
+                    <li>...</li>
+                </ul>
+            </div>
+            <div class="live-card blue">
+                <h3>ΚΑΤΟΠΙΝ ΣΥΝΕΝΝΟΗΣΗΣ</h3>
+                <ul>
+                    <!-- Συμπληρώστε τα προϊόντα εδώ -->
+                    <li>...</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -82,146 +81,95 @@
     <section id="products" class="products-section">
         <div class="container">
             <div class="section-header">
-                <h2>Η Σοδειά μας</h2>
-                <p>Ανακαλύψτε τι προσφέρει ο κήπος μας αυτή την εποχή. Η διαθεσιμότητα αλλάζει ανάλογα με τη συγκομιδή.</p>
+                <h2>Η ΠΑΡΑΓΩΓΗ ΜΑΣ</h2>
             </div>
             
             <div class="product-grid">
+                <!-- 1. Ζαρζαβατικά -->
                 <div class="product-card">
-                    <div class="product-icon"><span class="material-symbols-outlined">egg</span></div>
-                    <h3>Φρέσκα Αυγά</h3>
-                    <p>Από κότες ελευθέρας βοσκής στο κτήμα μας.</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon"><span class="material-symbols-outlined">nutrition</span></div>
-                    <h3>Κρεμμύδια</h3>
-                    <p>Ξερά και φρέσκα κρεμμυδάκια, γεμάτα νοστιμιά.</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon"><span class="material-symbols-outlined">eco</span></div>
-                    <h3>Ζαρζαβατικά</h3>
+                    <span class="material-symbols-outlined icon">eco</span>
+                    <h3>ΖΑΡΖΑΒΑΤΙΚΑ</h3>
                     <p>Ντομάτες, αγγούρια, πιπεριές και μελιτζάνες της εποχής.</p>
                 </div>
+                <!-- 2. Φρούτα εποχής -->
                 <div class="product-card">
-                    <div class="product-icon"><span class="material-symbols-outlined">oil_barrel</span></div>
-                    <h3>Ελαιόλαδο</h3>
-                    <p>Εξαιρετικό παρθένο ελαιόλαδο από τους ελαιώνες της Μόριας.</p>
+                    <span class="material-symbols-outlined icon">nutrition</span>
+                    <h3>ΦΡΟΥΤΑ ΕΠΟΧΗΣ</h3>
+                    <p>Ό,τι καλύτερο προσφέρει η Λεσβιακή γη κάθε μήνα.</p>
+                </div>
+                <!-- 3. Ελαιόλαδο -->
+                <div class="product-card">
+                    <span class="material-symbols-outlined icon">oil_barrel</span>
+                    <h3>ΕΛΑΙΟΛΑΔΟ</h3>
+                    <p>Εξαιρετικό παρθένο ελαιόλαδο από τη Μόρια.</p>
+                </div>
+                <!-- 4. Φρέσκα Αυγά -->
+                <div class="product-card">
+                    <span class="material-symbols-outlined icon">egg</span>
+                    <h3>ΦΡΕΣΚΑ ΑΥΓΑ</h3>
+                    <p>Από κότες ελευθέρας βοσκής στο κτήμα μας.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="products-cta">
-                <img src="assets/images/products.png" alt="Φρέσκα Προϊόντα">
-                <div class="cta-text">
-                    <h3>Θέλετε να παραγγείλετε;</h3>
-                    <p>Καλέστε μας για να μάθετε τι κόψαμε σήμερα και να κάνετε την παραγγελία σας.</p>
-                    <a href="https://wa.me/306982966408" class="btn-whatsapp">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                            <path d="M12.031 6.172c-2.32 0-4.591.89-6.338 2.503-3.14 2.897-3.337 7.82-.441 10.959.431.467.219.782.029 1.341l-.547 1.611c-.085.25.132.483.385.405l1.638-.501c.583-.179.914-.384 1.381.018 1.137.98 2.593 1.516 4.094 1.516 3.511 0 6.366-2.855 6.366-6.366 0-3.511-2.855-6.366-6.366-6.366zm3.377 9.405c-.158-.079-.937-.463-1.082-.516-.145-.053-.251-.079-.356.079l-.504.7c-.105.158-.211.184-.369.105-.158-.079-.667-.246-1.272-.785-.47-.419-.787-.937-.879-1.095-.092-.158-.01-.243.069-.321.072-.071.158-.184.237-.276.079-.092.105-.158.158-.263.053-.105.026-.197-.013-.276-.039-.079-.356-.856-.488-1.171-.128-.308-.259-.266-.356-.271l-.303-.005c-.105 0-.276.039-.421.197-.145.158-.553.54-.553 1.316s.566 1.526.645 1.632c.079.105 1.114 1.701 2.699 2.388.377.163.671.26.901.332.378.119.722.102 1.001.061.306-.045.937-.382 1.069-.751.132-.369.132-.684.092-.751-.039-.066-.145-.105-.303-.184z"/>
-                        </svg>
-                        Επικοινωνία μέσω WhatsApp
+    <!-- Mini Market Section -->
+    <section id="market" class="mini-market">
+        <div class="container market-content">
+            <div>
+                <h2>MINI MARKET</h2>
+                <p>Στον χώρο μας λειτουργεί και τοπικό mini market για την καθημερινή σας εξυπηρέτηση.</p>
+            </div>
+            <span class="material-symbols-outlined" style="font-size: 5rem; opacity: 0.5;">storefont</span>
+        </div>
+    </section>
+
+    <!-- Story Section (Reduced for focus) -->
+    <section id="farm" style="padding: 6rem 0;">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <img src="assets/images/farm.png" alt="Το αγρόκτημα" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-lg);">
+            <div>
+                <h2 style="color: var(--primary); margin-bottom: 2rem;">Ο ΑΝΤΩΝΗΣ ΚΑΙ Η ΓΗ ΤΗΣ ΜΟΡΙΑΣ</h2>
+                <p>Με αγάπη για τον τόπο μας, προσφέρουμε προϊόντα που καλλιεργούνται με παραδοσιακό τρόπο και απόλυτο σεβασμό στη φύση.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section Redesign -->
+    <section id="contact" class="contact-section container">
+        <div class="contact-grid">
+            <div>
+                <h2 style="color: var(--primary); margin-bottom: 2rem;">ΕΠΙΚΟΙΝΩΝΙΑ</h2>
+                <p>Βρείτε μας στη Μόρια ή καλέστε μας για την παραγγελία σας.</p>
+                
+                <div class="action-buttons">
+                    <a href="https://wa.me/306982966408" class="btn-big btn-whatsapp">
+                        ΣΤΕΙΛΕ WHATSAPP
+                    </a>
+                    <a href="tel:+306982966408" class="btn-big btn-call">
+                        ΚΛΗΣΗ ΤΩΡΑ: 6982966408
+                    </a>
+                    <a href="https://maps.google.com/?q=Μόρια,Λέσβος" target="_blank" class="btn-big btn-maps">
+                        ΑΝΟΙΓΜΑ ΣΕ GOOGLE MAPS
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Story Section -->
-    <section id="farm" class="story-section">
-        <div class="container story-grid">
-            <div class="story-image">
-                <img src="assets/images/farm.png" alt="Ο Αντώνης στο κτήμα">
-            </div>
-            <div class="story-content">
-                <div class="badge-dark">Η Ιστορία μας</div>
-                <h2>Ο Αντώνης και η Γη της Μόριας</h2>
-                <p>Στη Μόρια Λέσβου, ο κήπος μας δεν είναι απλά μια επιχείρηση, είναι ο τρόπος ζωής μας. Με σεβασμό στην παράδοση και με σύγχρονες πρακτικές, φροντίζουμε κάθε ρίζα, κάθε δέντρο και κάθε ζώο στο κτήμα μας.</p>
-                <p>Στόχος μας είναι να φέρουμε την αληθινή γεύση του χωριού στην πόλη, διατηρώντας την ποιότητα και τη φρεσκάδα που μόνο η άμεση επαφή με τον παραγωγό μπορεί να εγγυηθεί.</p>
-                <div class="quote">
-                    "Η γη μας επιστρέφει τη φροντίδα που της δίνουμε. Αυτό είναι το μυστικό της νοστιμιάς μας."
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="contact-card">
-                <div class="contact-info">
-                    <h2>Επικοινωνήστε μαζί μας</h2>
-                    <p>Είμαστε στη διάθεσή σας για παραγγελίες, πληροφορίες ή συνεργασίες.</p>
-                    
-                    <ul class="contact-list">
-                        <li>
-                            <span class="material-symbols-outlined">call</span>
-                            <div>
-                                <span>Τηλέφωνο</span>
-                                <strong>6982966408</strong>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">location_on</span>
-                            <div>
-                                <span>Τοποθεσία</span>
-                                <strong>Μόρια, Λέσβος</strong>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="FB" width="24"></a>
-                        <a href="#" aria-label="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="IG" width="24"></a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Ονοματεπώνυμο</label>
-                            <input type="text" id="name" placeholder="Πώς σας λένε;">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Τηλέφωνο</label>
-                            <input type="tel" id="phone" placeholder="Για να σας καλέσουμε">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Μήνυμα</label>
-                            <textarea id="message" rows="4" placeholder="Τι θα θέλατε να μας πείτε;"></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Αποστολή Μηνύματος</button>
-                    </form>
-                </div>
+            <div style="background: var(--light-bg); padding: 3rem; border-radius: 8px;">
+                <h3 style="color: var(--primary); margin-bottom: 1.5rem;">ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</h3>
+                <p><strong>Δευτέρα - Σάββατο:</strong> 08:00 - 20:00</p>
+                <p><strong>Κυριακή:</strong> Κλειστά</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <h3>Ο Κήπος του Αντώνη</h3>
-                <p>Φρέσκα προϊόντα από τη Μόρια Λέσβου κατευθείαν στην πόρτα σας.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Σύνδεσμοι</h4>
-                <ul>
-                    <li><a href="#home">Αρχική</a></li>
-                    <li><a href="#products">Προϊόντα</a></li>
-                    <li><a href="#farm">Το Αγρόκτημα</a></li>
-                    <li><a href="#contact">Επικοινωνία</a></li>
-                </ul>
-            </div>
-            <div class="footer-newsletter">
-                <h4>Ωράριο Επικοινωνίας</h4>
-                <p>Δευτέρα - Σάββατο: 08:00 - 20:00</p>
-                <p>Κυριακή: Κλειστά</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Ο Κήπος του Αντώνη. All rights reserved.</p>
+        <div class="container">
+            <h3>Ο ΚΗΠΟΣ ΤΟΥ ΑΝΤΩΝΗ</h3>
+            <p>&copy; 2026. Με σεβασμό στη φύση.</p>
         </div>
     </footer>
 
-    <!-- JS -->
     <script src="js/main.js"></script>
 </body>
 </html>
