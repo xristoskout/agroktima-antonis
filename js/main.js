@@ -1,104 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.getElementById('navbar');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menuToggle");
+  const mobilePanel = document.getElementById("mobilePanel");
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+  if (toggle && mobilePanel) {
+    toggle.addEventListener("click", () => {
+      mobilePanel.classList.toggle("open");
     });
 
-    // Mobile menu toggle
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        // Simple animation for the icon
-        const icon = menuToggle.querySelector('span');
-        icon.textContent = navLinks.classList.contains('active') ? 'close' : 'menu';
+    mobilePanel.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobilePanel.classList.remove("open");
+      });
     });
 
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            menuToggle.querySelector('span').textContent = 'menu';
+    document.addEventListener("click", (e) => {
+      const isInsidePanel = mobilePanel.contains(e.target);
+      const isToggle = toggle.contains(e.target);
+      if (!isInsidePanel && !isToggle) {
+        mobilePanel.classList.remove("open");
+      }
+    });
+  }
+
+  // Seasonal Tabs Logic
+  const seasonTabs = document.querySelectorAll(".season-pill");
+  const seasonLists = document.querySelectorAll(".season-list");
+
+  if (seasonTabs.length > 0) {
+    seasonTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.getAttribute("data-season");
+
+        // Update Tabs
+        seasonTabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        // Update Lists
+        seasonLists.forEach((list) => {
+          list.classList.remove("active");
+          if (list.id === target) {
+            list.classList.add("active");
+          }
         });
+      });
     });
-
-    // Simple scroll animation (reveal on scroll)
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Apply reveal animation to sections
-    document.querySelectorAll('section, .product-card, .feature-card').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.8s ease-out';
-        observer.observe(el);
-    });
-
-    // Custom CSS for JS animations
-    const style = document.createElement('style');
-    style.textContent = `
-        .reveal {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-        
-        @media (max-width: 1024px) {
-            .nav-links.active {
-                display: flex !important;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: white;
-                padding: 2rem;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                gap: 1.5rem;
-                animation: fadeInDown 0.3s ease;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Form submission handling (simulation)
-    const contactForm = document.querySelector('.contact-form form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.textContent;
-            
-            btn.disabled = true;
-            btn.textContent = 'Αποστολή...';
-            
-            // Simulate API call
-            setTimeout(() => {
-                btn.style.background = '#25D366';
-                btn.textContent = 'Το μήνυμα εστάλη!';
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    btn.disabled = false;
-                    btn.style.background = '';
-                    btn.textContent = originalText;
-                }, 3000);
-            }, 1500);
-        });
-    }
+  }
 });
